@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <center>
+        <form method="post" class="box">
+            <p>Utilizador</p>
+            <input type="text" placeholder="Utilizador" name="usr" required>
+            <p><br><br></p>
+            <p>Palavra-Passe</p>
+            <input type="password" placeholder="Password" name="pwd" required>
+            <p><br><br></p>
+            <p>Confirma Palavra-Passe</p>
+            <input type="password" placeholder="Password" name="cpwd" required>
+            <p><br></p>
+            <input type="submit" placeholder="Criar Conta">
+            <p style="padding: 30px;"></p>
+            {% if erro %}
+            <h2 class="no-passe">{{ erro }}</h2>
+            {% endif %}
+        </form>
+    </center>
+</body>
+</html>
