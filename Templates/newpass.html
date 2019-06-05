@@ -2,17 +2,18 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Rui é Tiago Paints</title>
     <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
+
 <body>
-<h1>Criar conta</h1>
+<h1>Alterar Senha</h1>
 <form method="post">
     <fieldset>
         <legend>Introduza os seus dados</legend>
         <h1>Utilizador</h1>
         <input type='text' name="usr" required>
-        <h1>Nova palavra-Passe</h1>
+        <h1>Palavra-Passe</h1>
         <input type='password' name="pwd" required>
         <h1>Confirme a palavra passe</h1>
         <input type='password' name="cpwd" required>
@@ -23,4 +24,3 @@
 {% if erro %}<h2>{{ erro }}</h2>{% endif %}
 </body>
 </html>
-
