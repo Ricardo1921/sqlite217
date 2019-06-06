@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h1>Criar conta</h1>
+<form method="post">
+    <fieldset>
+        <legend>Introduza os seus dados</legend>
+        <h1>Utilizador</h1>
+        <input type='text' name="usr" required>
+        <h1>Nova palavra-Passe</h1>
+        <input type='password' name="pwd" required>
+        <h1>Confirme a palavra passe</h1>
+        <input type='password' name="cpwd" required>
+        <p><br></p>
+        <input type="submit" value="Submeter">
+    </fieldset>
+</form>
+{% if erro %}<h2>{{ erro }}</h2>{% endif %}
+
+{% endblock %}

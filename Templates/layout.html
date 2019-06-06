@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>A minha Pagina</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/realases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="/static/style.css">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="/" class="active">Home</a>
+    <a href="login">Login</a>
+    <a href="registo">Registo</a>
+    <a href="newpass">Nova Senha</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>
