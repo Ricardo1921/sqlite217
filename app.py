@@ -25,7 +25,7 @@ def alterar(v1, v2):
     return
 
 
-def existe(v1,):
+def existe(v1, ):
     import sqlite3
     ficheiro = sqlite3.connect('db/Utilizadores.db')
     db = ficheiro.cursor()
@@ -44,6 +44,16 @@ def log(v1, v2):
     valor = db.fetchone()
     ficheiro.close()
     return valor
+
+
+def eliminar(v1):
+    import sqlite3
+    ficheiro = sqlite3.connect('db/Utilizadores.db')
+    db = ficheiro.cursor()
+    db.execute("DELETE FROM usr WHERE usr = ? ", (v1,))
+    ficheiro.commit()
+    ficheiro.close()
+    return
 
 
 @app.route('/newpass', methods=['GET', 'POST'])
@@ -94,9 +104,26 @@ def login():
     return render_template('login.html', erro=erro)
 
 
+@app.route('/apagar', methods=['GET', 'POST'])
+def apagar():
+    erro = None
+    if request.method == 'POST':
+        v1 = request.form['usr']
+        v2 = request.form['pwd']
+        if not existe(v1):
+            erro = 'O utilizador não existe.'
+        elif not log(v1, v2):
+            erro = 'A palavra passe incorreta.'
+        else:
+            eliminar(v1)
+            erro = 'Conta eliminada com sucesso'
+    return render_template('apagar.html', erro=erro)
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
